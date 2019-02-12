@@ -38,6 +38,7 @@
       <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
@@ -52,11 +53,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aplicacao\PublicacaoApp.cs" />
+    <Compile Include="Auxiliares\ResolverConexao.cs" />
     <Compile Include="InjecaoDeDependencia.cs" />
     <Compile Include="Interfaces\Aplicacao\IPublicacaoApp.cs" />
     <Compile Include="Interfaces\Repositorio\IPublicacaoRep.cs" />
     <Compile Include="Interfaces\Servico\IPublicacaoServ.cs" />
     <Compile Include="Modelos\PubicacaoMds\EnviarMd.cs" />
+    <Compile Include="Persistencia\Contexto\Conexao.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IConexao.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IConexaoPublicador.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IResolverConexao.cs" />
+    <Compile Include="Persistencia\Contexto\ConexaoPublicador.cs" />
     <Compile Include="Publicacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +72,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\PublicacaoRep.cs" />
+    <Compile Include="Persistencia\Repositorio\PublicacaoRep.cs" />
     <Compile Include="Servicos\PublicacaoServ.cs" />
     <EmbeddedResource Include="Publicacao.resx">
       <DependentUpon>Publicacao.cs</DependentUpon>
