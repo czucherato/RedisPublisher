@@ -6,10 +6,7 @@ namespace RedisPublisher.Servicos
 {
     public class PublicacaoServ : IPublicacaoServ
     {
-        public PublicacaoServ(IPublicacaoRep rep)
-        {
-            this._rep = rep;
-        }
+        public PublicacaoServ(IPublicacaoRep rep) => this._rep = rep;
 
         private readonly IPublicacaoRep _rep;
 
